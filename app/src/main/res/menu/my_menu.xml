@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/player"
+        android:title="Launch Ringtone Player"/>
+    <item android:id="@+id/rView"
+        android:title="Recycler View Example" />
+    <item android:id="@+id/opt3"
+        android:title="Option 3" />
+    <item android:id="@+id/opt4"
+        android:title="Option 4" />
+    <item android:id="@+id/opt5"
+        android:title="Option 5" />
+    <item android:id="@+id/about"
+        android:title="About" />
+</menu>
