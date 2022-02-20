@@ -261,7 +261,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
             case R.id.rView:
                 Intent intent_torView = new Intent(this, InfoActivity.class);
                 startActivity(intent_torView);
-                Toast.makeText(getApplicationContext(),"Directed to RecyclerView",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"Directed to RecyclerView",Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.about:
                 Intent intent_toAbout = new Intent(this, About.class);
