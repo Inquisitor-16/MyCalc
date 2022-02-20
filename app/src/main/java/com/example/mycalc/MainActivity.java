@@ -100,14 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             Toast.LENGTH_SHORT).show();
 
                 }
-                else{
-
-                        /*SharedPreferences sharedPreferences = getSharedPreferences("Info", MODE_PRIVATE);
-                        SharedPreferences.Editor myEditor = sharedPreferences.edit();
-
-                        myEditor.putString("Username", uname.getText().toString());
-                        myEditor.putString("Password", cnf_pwd.getText().toString());
-                        myEditor.apply();*/
+                else {
                     RadioButton radioButton = radioGroup.findViewById(radioGroup.getCheckedRadioButtonId());
                     gender_str = radioButton.getText().toString();
                     if(isPresentInDb(uname_str)){
@@ -117,13 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                     else {
                         storeData(name_str, uname_str, pwd_str, gender_str);
-//                        databaseManager = new DatabaseManager(MainActivity.this);
-//                        sqLiteDatabase = databaseManager.getWritableDatabase();
-//                        databaseManager.insertData(new User(name_str, uname_str, pwd_str, gender_str),sqLiteDatabase);
-//                        //Toast.makeText(getApplicationContext(),"Data Inserted",Toast.LENGTH_LONG).show();
-//                        databaseManager.close();
-
-
+//
                         name.setText("");
                         radioGroup.clearCheck();
                         uname.setText("");
