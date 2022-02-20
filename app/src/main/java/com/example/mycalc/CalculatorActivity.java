@@ -17,7 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener{
-    private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
+    private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, C, CE, back;
     private Button add_btn, subtract_btn, multiply_btn, divide_btn, mod_btn, equal_btn;
     private Button bracks_open, bracks_close;
     private TextView in_tv, out_tv, hello;
@@ -42,6 +42,9 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         btn7 = findViewById(R.id.btn7);
         btn8 = findViewById(R.id.btn8);
         btn9 = findViewById(R.id.btn9);
+        C = findViewById(R.id.C);
+        CE = findViewById(R.id.CE);
+        back = findViewById(R.id.clear);
 
         add_btn = findViewById(R.id.add);
         subtract_btn = findViewById(R.id.subtract);
@@ -71,6 +74,10 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         btn7.setOnClickListener(this);
         btn8.setOnClickListener(this);
         btn9.setOnClickListener(this);
+
+        C.setOnClickListener(this);
+        CE.setOnClickListener(this);
+        back.setOnClickListener(this);
 
         add_btn.setOnClickListener(this);
         subtract_btn.setOnClickListener(this);
@@ -239,6 +246,21 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                 int res = solve.evaluate(stream);
                 out_tv.setText(Integer.toString(res));
                 in_tv.setText("0");
+                break;
+            case R.id.CE:
+                in_tv.setText("0");
+                out_tv.setText("0");
+                stream = "";
+                break;
+            case R.id.C:
+                in_tv.setText("0");
+                break;
+            case R.id.clear:
+                stream = stream.substring(0, stream.length() - 1);
+                if(stream.length() == 0){
+                    stream = "0";
+                }
+                in_tv.setText(stream);
                 break;
         }
     }
