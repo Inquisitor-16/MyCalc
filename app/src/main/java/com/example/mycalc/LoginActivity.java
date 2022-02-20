@@ -46,22 +46,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.cnf_login:
-                /*SharedPreferences sharedPreferences = getSharedPreferences("Info", MODE_PRIVATE);
-                String username = sharedPreferences.getString("Username", "");
-                String pwd = sharedPreferences.getString("Password", "");*/
                 String username = uname.getText().toString();
                 String pwd = password.getText().toString();
                 databaseManager = new DatabaseManager(LoginActivity.this);
                 sqLiteDatabase = databaseManager.getReadableDatabase();
                 cursor = databaseManager.searchUser(username, sqLiteDatabase);
+
                 String username_db ="";
                 String pwd_db = "";
+
                 if(cursor.moveToFirst()) {
                     do {
                         username_db = cursor.getString(0);
                         pwd_db = cursor.getString(1);
                     } while (cursor.moveToNext());
                 }
+
                 if((!username.isEmpty() && username.equals(username_db)) && !pwd.isEmpty() && pwd.equals(pwd_db)){
                     LayoutInflater layoutInflater = LayoutInflater.from(this);
                     View captchaView = layoutInflater.inflate(R.layout.captcha_verification, null);
@@ -71,6 +71,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     builder.setMessage("To login, enter the text that you see");
                     captcha = captchaView.findViewById(R.id.editText);
                     builder.setView(captchaView);
+
                     builder.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -81,7 +82,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 SharedPreferences.Editor myEditor = sharedPreferences.edit();
 
                                 myEditor.putString("Username", username);
-                                //myEditor.putString("Password", pwd);
                                 myEditor.apply();
 
                                 uname.setText("");
