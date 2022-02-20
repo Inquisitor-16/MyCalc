@@ -263,15 +263,6 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                 startActivity(intent_torView);
                 Toast.makeText(getApplicationContext(),"Directed to RecyclerView",Toast.LENGTH_SHORT).show();
                 return true;
-            case R.id.opt3:
-                Toast.makeText(getApplicationContext(),"Option 3 Selected",Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.opt4:
-                Toast.makeText(getApplicationContext(),"Option 4 Selected",Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.opt5:
-                Toast.makeText(getApplicationContext(),"Option 5 Selected",Toast.LENGTH_SHORT).show();
-                return true;
             case R.id.about:
                 Intent intent_toAbout = new Intent(this, About.class);
                 startActivity(intent_toAbout);
