@@ -38,7 +38,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
         MyHolder holder = (MyHolder) viewHolder;
         ArrayList<TextView> main = holder.getView();
         User user = mDataList.get(position);
-        //String data = "Aditya";
+
         main.get(0).setText( user.name);
         main.get(1).setText("Gender : " + user.gender);
         main.get(2).setText("Username : " + user.userName);
