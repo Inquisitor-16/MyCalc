@@ -208,18 +208,30 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                 }
                 break;
             case R.id.add:
+                if(out_tv.getText().toString() != "0" && in_tv.getText().toString() == "0"){
+                    in_tv.setText(out_tv.getText().toString());
+                }
                 stream = in_tv.getText().toString();
                 in_tv.setText(stream + "+");
                 break;
             case R.id.subtract:
+                if(out_tv.getText().toString() != "0" && in_tv.getText().toString() == "0"){
+                    in_tv.setText(out_tv.getText().toString());
+                }
                 stream = in_tv.getText().toString();
                 in_tv.setText(stream + "-");
                 break;
             case R.id.multiply:
+                if(out_tv.getText().toString() != "0" && in_tv.getText().toString() == "0"){
+                    in_tv.setText(out_tv.getText().toString());
+                }
                 stream = in_tv.getText().toString();
                 in_tv.setText(stream + "×");
                 break;
             case R.id.divide:
+                if(out_tv.getText().toString() != "0" && in_tv.getText().toString() == "0"){
+                    in_tv.setText(out_tv.getText().toString());
+                }
                 stream = in_tv.getText().toString();
                 in_tv.setText(stream + "÷");
                 break;

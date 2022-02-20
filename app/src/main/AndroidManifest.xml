@@ -18,6 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".CalculatorActivity"/>
+        <activity android:name=".PlayerActivity"/>
+        <activity android:name=".About"/>
+        <activity android:name=".InfoActivity"/>
+        <service android:name=".MusicService"/>
     </application>
 
 </manifest>
