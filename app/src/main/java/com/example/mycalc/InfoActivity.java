@@ -26,7 +26,7 @@ public class InfoActivity extends AppCompatActivity implements Helper {
 
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState){
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_info);
 
@@ -35,10 +35,10 @@ public class InfoActivity extends AppCompatActivity implements Helper {
 
         databaseManager = new DatabaseManager(InfoActivity.this);
         sqLiteDatabase = databaseManager.getReadableDatabase();
-        cursor =  databaseManager.getAllData(sqLiteDatabase);
+        cursor = databaseManager.getAllData(sqLiteDatabase);
 
-        if(cursor.moveToFirst()){
-            do{
+        if (cursor.moveToFirst()) {
+            do {
                 String _name, _uname, _password, _gender;
                 _name = cursor.getString(0);
                 _uname = cursor.getString(1);
@@ -56,29 +56,7 @@ public class InfoActivity extends AppCompatActivity implements Helper {
         mList.setItemAnimator(new DefaultItemAnimator());
         adapter.setHelper(this);
         mList.setAdapter(adapter);
-/*
-        listView = (ListView) findViewById(R.id.list1);
-        myAdapter = new MyAdapter(ViewDataActivity.this, R.layout.list_items_layout);
-        listView.setAdapter(myAdapter);
-*/
-
     }
-    /*private ArrayList<User> getData(){
-        ArrayList<User> list = new ArrayList<>();
-        list.add(new User("Aditya", "inquisitor","Adi1234", "M"));
-        list.add(new User("Aditya", "inquisitor","Adi1234", "M"));
-        list.add(new User("Aditya", "inquisitor","Adi1234", "M"));
-        list.add(new User("Aditya", "inquisitor","Adi1234", "M"));
-        list.add(new User("Aditya", "inquisitor","Adi1234", "M"));
-        list.add(new User("Aditya", "inquisitor","Adi1234", "M"));
-        list.add(new User("Aditya", "inquisitor","Adi1234", "M"));
-        list.add(new User("Aditya", "inquisitor","Adi1234", "M"));
-        list.add(new User("Aditya", "inquisitor","Adi1234", "M"));
-        list.add(new User("Aditya", "inquisitor","Adi1234", "M"));
-        list.add(new User("Aditya", "inquisitor","Adi1234", "M"));
-        list.add(new User("Aditya", "inquisitor","Adi1234", "M"));
-        return list;
-    }*/
 
     @Override
     public void onItemClick(View view){
