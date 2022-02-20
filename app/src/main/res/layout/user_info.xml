@@ -4,7 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".InfoActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="Stored User signup Information"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textColor="#009688"
+        android:layout_marginBottom="5dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/infoView"
