@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Toast.makeText(LoginActivity.this, "No pressed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Login Denied", Toast.LENGTH_SHORT).show();
                             //dialog.dismiss();
                         }
                     });
@@ -109,9 +109,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 }
                 else{
-                    Toast t = Toast.makeText(getApplicationContext(),  "Either Username or Password is wrong",  Toast.LENGTH_LONG);
-                    t.setGravity(Gravity.BOTTOM | Gravity.RIGHT, 0, 0);
-                    t.show();
+                    if(username.length() < 4){
+                        uname.setError("Username should be at least 4 digits long");
+                    }
+                    else if(username.equals(username_db) && !pwd.equals(pwd_db)){
+                        Toast.makeText(getApplicationContext(),  "Wrong Password",  Toast.LENGTH_SHORT).show();
+                        password.setText("");
+                    }
+                    else if(!username.equals(username_db)){
+                        Toast.makeText(getApplicationContext(), "User does not exist", Toast.LENGTH_SHORT).show();
+                        password.setText("");
+                    }
+
                 }
                 break;
 
