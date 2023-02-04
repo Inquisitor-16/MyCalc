@@ -39,7 +39,8 @@
         android:gravity="center_vertical"
         android:textAlignment="viewEnd"
         android:paddingRight="25dp"
-        android:fontFamily="sans-serif-condensed-medium">
+        android:fontFamily="sans-serif-condensed-medium"
+        tools:ignore="RtlCompat">
 
     </TextView>
     <TextView
@@ -53,7 +54,8 @@
         android:gravity="center_vertical"
         android:textAlignment="viewEnd"
         android:paddingRight="25dp"
-        android:fontFamily="sans-serif-condensed-medium">
+        android:fontFamily="sans-serif-condensed-medium"
+        tools:ignore="RtlCompat">
     </TextView>
 
     <LinearLayout
